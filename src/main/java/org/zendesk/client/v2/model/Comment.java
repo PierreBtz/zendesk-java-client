@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import org.zendesk.client.v2.model.comments.VoiceComment;
-import org.zendesk.client.v2.model.comments.TpeVoiceComment;
 
 /**
  * @author stephenc
@@ -21,7 +20,7 @@ import org.zendesk.client.v2.model.comments.TpeVoiceComment;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = Comment.class, name = "Comment"),
   @JsonSubTypes.Type(value = VoiceComment.class, name = "VoiceComment"),
-  @JsonSubTypes.Type(value = TpeVoiceComment.class, name = "TpeVoiceComment")
+  @JsonSubTypes.Type(value = VoiceComment.class, name = "TpeVoiceComment")
 })
 public class Comment implements Serializable {
 
